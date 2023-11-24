@@ -1,8 +1,17 @@
 import MOHLogo from '../assets/nav-logo.png';
 import { Link } from 'react-router-dom'
-import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from './ProfileDropdown'
+import { useNavigate } from 'react-router-dom'
 
 function NavBar() {
+
+  const navigate = useNavigate()
+
+  const logUserOut = () => {
+    localStorage.clear();
+    navigate("/login")
+  }
+
   return (
     <div className="hidden sm:block md:block">
       <div className="flex flex-wrap items-center gap-6 rounded-lg px-4 sm:flex-nowrap sm:px-6 lg:px-8 shadow py-4">
